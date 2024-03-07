@@ -1,47 +1,106 @@
-<mxfile host="app.diagrams.net" modified="2024-02-29T03:24:08.006Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15" etag="6KLQ4pnZL5j4X9VYigcH" version="23.1.8" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-07T19:10:32.236Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="T5UYDHVHE5aI7QA3HV8G" version="24.0.0" type="github" pages="2">
   <diagram name="Page-1" id="sUV660QRLb9GWtnvWiSY">
-    <mxGraphModel dx="1016" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1194" dy="615" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="xEwWNTtIfGPYKrBFahtm-1" value="Sequence diagram" style="rounded=0;whiteSpace=wrap;html=1;fontSize=30;" vertex="1" parent="1">
+        <mxCell id="xEwWNTtIfGPYKrBFahtm-1" value="Sequence diagram" style="rounded=0;whiteSpace=wrap;html=1;fontSize=30;" parent="1" vertex="1">
           <mxGeometry x="400" y="70" width="300" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="xEwWNTtIfGPYKrBFahtm-6" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;User&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="xEwWNTtIfGPYKrBFahtm-6" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;User&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="30" y="160" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="xEwWNTtIfGPYKrBFahtm-7" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="xEwWNTtIfGPYKrBFahtm-6">
+        <mxCell id="xEwWNTtIfGPYKrBFahtm-7" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="xEwWNTtIfGPYKrBFahtm-6" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="75" y="660" as="sourcePoint" />
             <mxPoint x="315" y="300" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="xEwWNTtIfGPYKrBFahtm-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="xEwWNTtIfGPYKrBFahtm-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="65" y="230" width="20" height="380" as="geometry" />
         </mxCell>
-        <mxCell id="xEwWNTtIfGPYKrBFahtm-8" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Log in&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="xEwWNTtIfGPYKrBFahtm-8" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Log in&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="190" y="160" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="xEwWNTtIfGPYKrBFahtm-9" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" target="xEwWNTtIfGPYKrBFahtm-8" parent="1">
+        <mxCell id="xEwWNTtIfGPYKrBFahtm-9" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="xEwWNTtIfGPYKrBFahtm-8" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="235" y="660" as="sourcePoint" />
             <mxPoint x="475" y="300" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="xEwWNTtIfGPYKrBFahtm-10" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="xEwWNTtIfGPYKrBFahtm-10" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="225" y="230" width="20" height="380" as="geometry" />
         </mxCell>
-        <mxCell id="xEwWNTtIfGPYKrBFahtm-11" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Log in&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="xEwWNTtIfGPYKrBFahtm-11" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Log in&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="350" y="160" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="xEwWNTtIfGPYKrBFahtm-12" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" target="xEwWNTtIfGPYKrBFahtm-11" parent="1">
+        <mxCell id="xEwWNTtIfGPYKrBFahtm-12" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="xEwWNTtIfGPYKrBFahtm-11" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="395" y="660" as="sourcePoint" />
             <mxPoint x="635" y="300" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="xEwWNTtIfGPYKrBFahtm-13" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="xEwWNTtIfGPYKrBFahtm-13" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="385" y="230" width="20" height="380" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="A5SaMljv7vZKvH0Ynjxl" name="Login_Sequence">
+    <mxGraphModel dx="954" dy="615" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="WH2RaVnlgmuL-WKISgTv-1" value="Client" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="560" y="170" width="100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="WH2RaVnlgmuL-WKISgTv-2" value="Server" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="840" y="170" width="100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="WH2RaVnlgmuL-WKISgTv-3" value="Client_Hello" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="WH2RaVnlgmuL-WKISgTv-2">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="610" y="260" as="sourcePoint" />
+            <mxPoint x="690" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WH2RaVnlgmuL-WKISgTv-4" value="Server_Hello" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="WH2RaVnlgmuL-WKISgTv-1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="890" y="290" as="sourcePoint" />
+            <mxPoint x="810" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WH2RaVnlgmuL-WKISgTv-5" value="Login_Request" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="890" y="319.5" as="sourcePoint" />
+            <mxPoint x="610" y="319.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WH2RaVnlgmuL-WKISgTv-7" value="Login_Credential" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="610" y="350" as="sourcePoint" />
+            <mxPoint x="889.5" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WH2RaVnlgmuL-WKISgTv-8" value="Login_Request" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="890" y="457" as="sourcePoint" />
+            <mxPoint x="610" y="457" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WH2RaVnlgmuL-WKISgTv-9" value="Successful_Login" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="890" y="380" as="sourcePoint" />
+            <mxPoint x="610" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WH2RaVnlgmuL-WKISgTv-10" value="Login_Credential" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="610" y="427" as="sourcePoint" />
+            <mxPoint x="889.5" y="427" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WH2RaVnlgmuL-WKISgTv-11" value="alt" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;shadow=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="390" width="320" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
