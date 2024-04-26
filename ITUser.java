@@ -1,4 +1,4 @@
 
-public class UserType {
+public enum UserType {
 
 }
