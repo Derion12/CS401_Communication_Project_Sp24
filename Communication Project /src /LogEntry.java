@@ -4,13 +4,12 @@ import java.util.List;
 
 // Define a LogEntry class to represent individual log entries
 class LogEntry {
-    private LocalTime timestamp;
     private String eventType;
     private String description;
-
+    private Date timestamp;
     // Constructor
     public LogEntry(String timestamp, String eventType, String description) {
-        this.timestamp = LocalTime.now();
+        this.timestamp = timestamp;
         this.eventType = eventType;
         this.description = description;
     }
