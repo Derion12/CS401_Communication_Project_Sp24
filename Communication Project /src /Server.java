@@ -13,6 +13,12 @@ public class Server {
         Socket socket = ss.accept();
         System.out.println("Connection from " + socket + "!");
 
+        // Output stream socket.
+        OutputStream outputStream = socket.getOutputStream();
+
+        // Create object output stream from the output stream to send an object through it
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
+        
         // get the input stream from the connected socket
         InputStream inputStream = socket.getInputStream();
 
