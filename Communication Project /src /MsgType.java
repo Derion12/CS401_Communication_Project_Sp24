@@ -1,9 +1,10 @@
 
 public enum MsgType {
-	Login,
-	Logout,
-	DirectMessage,
-	GroupChatMessage,
-	ContactListMessage,
-	StatusMessage
+	UNDEFINED,
+	LOGIN,
+	LOGOUT,
+	DIRECTMESSAGE,
+	GROUPCHATMESSAGE,
+	CONTACTLISTMESSAGE,
+	STATUSMESSAGE
 }
