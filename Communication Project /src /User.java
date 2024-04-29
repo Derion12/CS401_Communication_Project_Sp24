@@ -3,13 +3,13 @@ public class User {
     private String userId;
     private String username;
     private String password;
-    private UserStatus userStatus;
+    private UserStatus online;
 
-    public User(String userId, String username, String password, UserStatus userStatus) {
+    public User(String userId, String username, String password, boolean online) {
         this.userId = userId;
         this.username = username;
         this.password = password;
-        this.userStatus = userStatus;
+        this.online = online;
     }
 
     public String getUserId() {
@@ -24,8 +24,8 @@ public class User {
         return password;
     }
 
-    public UserStatus getUserStatus() {
-        return userStatus;
+    public UserStatus getOnline() {
+        return online;
     }
 
     public void setUsername(String username) {
@@ -39,6 +39,8 @@ public class User {
     public void setUserType(UserStatus userStatus) {
         this.userStatus = userStatus;
     }
+    public void setOnline(boolean online){
+        this.online = online;
+    }
 
-   
 }
