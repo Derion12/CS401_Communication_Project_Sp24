@@ -8,24 +8,24 @@ public class Message implements Serializable {
    	protected final int id;
 
     public Message(){
-        this.type = "Undefined";
-        this.status = "Undefined";
-        this.text = "Undefined";
+        this.type = UNDEFINED;
+        this.status = UNDEFINED;
+        this.text = UNDEFINED;
         this.id = ++count;
     }
 
-    public Message(String type, String status, String text){
+    public Message(MsgType type, MsgStatus status, String text){
         this.type = type;
         this.status = status;
         this.text = text;
  	this.id = ++count;
     }
 
-    private void setType(String type){
+    private void setType(MsgType type){
 	    this.type = type
     }
 
-    private void setStatus(String status){
+    private void setStatus(MsgStatus status){
 	    this.status = status;
     }
 
