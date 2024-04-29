@@ -4,13 +4,15 @@ public class Message implements Serializable {
 	protected static int count;
   	protected MsgType type;
    	protected MsgStatus status;
-    	protected String text;
+    protected String text;
+    protected boolean online;
+    
    	protected final int id;
 
     public Message(){
-        this.type = UNDEFINED;
-        this.status = UNDEFINED;
-        this.text = UNDEFINED;
+        this.type = MsgType.UNDEFINED;
+        this.status = MsgStatus.UNDEFINED;
+        this.text = null;
         this.id = ++count;
     }
 
@@ -18,11 +20,11 @@ public class Message implements Serializable {
         this.type = type;
         this.status = status;
         this.text = text;
- 	this.id = ++count;
+        this.id = ++count;
     }
 
     private void setType(MsgType type){
-	    this.type = type
+	    this.type = type;
     }
 
     private void setStatus(MsgStatus status){
@@ -37,11 +39,11 @@ public class Message implements Serializable {
     	return id;
     }
     
-    public String getType(){
+    public MsgType getType(){
     	return type;
     }
 
-    public String getStatus(){
+    public MsgStatus getStatus(){
     	return status;
     }
 
