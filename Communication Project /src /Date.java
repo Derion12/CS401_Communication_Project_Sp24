@@ -1,26 +1,24 @@
-import java.time.LocalDate;
-
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Date {
-    private LocalDate currentDate;
+    private LocalDateTime currentDate;
+    private String formattedDate;
 
     // Constructor to initialize the date to the current date
     public Date() {
-        currentDate = LocalDate.now();
-    }
-
-    // Constructor to initialize the date with a specific year, month, and day
-    public Date(int year, int month, int day) {
-        currentDate = LocalDate.of(year, month, day);
+        currentDate = LocalDateTime.now();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
+        formattedDate = currentDate.format(myFormatObj);
     }
 
     // Method to get the current date
-    public LocalDate getCurrentDate() {
-        return currentDate;
+    public String getCurrentDate() {
+        return formattedDate;
     }
-
-    // Method to display the current date
-    public void displayDate() {
-        System.out.println(currentDate);
-    }
+//
+//    // Method to display the current date
+//    public void displayDate() {
+//        System.out.println(currentDate);
+//    }
 }
