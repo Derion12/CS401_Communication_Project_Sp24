@@ -1,4 +1,3 @@
-
 import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -24,16 +23,23 @@ public class Client {
         // Create object output stream from the output stream to send an object through it
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
 
-        // List of Message objects
-        List<Message> messages = new ArrayList<>();
-        messages.add(new Message("","","This is a test message!"));
+     // get the input stream from the connected socket
+        InputStream inputStream = socket.getInputStream();
 
-        System.out.print("Enter message info. <enter> to quit\n");
-        String msg = sc.next();
-        messages.add(new Message("","",msg));
+        // create a ObjectInputStream so we can read data from it.
+        ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
+        
+        // List of Message objects
+        Message messageToSend;
+        MsgType type = MsgType.DIRECTMESSAGE;
+        MsgStatus stat = MsgStatus.UNDEFINED;
+        String msg = "";
+        messageToSend = new Message(type,stat,msg);
+
+        messageToSend = new Message(type,stat,msg);
 
         System.out.println("Sending Message Objects");
-        objectOutputStream.writeObject(messages);
+        objectOutputStream.writeObject(messageToSend);
 
         System.out.println("Closing socket");
         socket.close();
