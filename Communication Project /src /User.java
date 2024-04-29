@@ -1,15 +1,21 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class User {
     private String userId;
     private String username;
     private String password;
-    private UserStatus online;
+    private ArrayList<Chatroom> chatrooms;
+    private boolean online;
+    private boolean admin;
 
-    public User(String userId, String username, String password, boolean online) {
+    public User(String userId, String username, String password, boolean online, boolean admin) {
         this.userId = userId;
         this.username = username;
         this.password = password;
         this.online = online;
+        this.admin = admin;
+        chatrooms = new ArrayList<Chatroom>();
     }
 
     public String getUserId() {
@@ -24,10 +30,18 @@ public class User {
         return password;
     }
 
-    public UserStatus getOnline() {
+    public boolean getOnline() {
         return online;
     }
-
+    
+    public boolean getAdmin() {
+        return admin;
+    }
+    
+    public ArrayList<Chatroom> getChatrooms() {
+        return chatrooms;
+    }
+   
     public void setUsername(String username) {
         this.username = username;
     }
@@ -36,11 +50,11 @@ public class User {
         this.password = password;
     }
 
-    public void setUserType(UserStatus userStatus) {
-        this.userStatus = userStatus;
-    }
-    public void setOnline(boolean online){
+    public void setOnline(boolean online) {
         this.online = online;
     }
-
+    public void setAdmin(boolean admin) {
+        this.online = admin;
+    }
+   
 }
