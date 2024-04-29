@@ -1,39 +1,24 @@
-import java.util.Date;
-
 public class ChatMsg {
-    private int messageId;
     private User sender;
-    private User receiver;
+    private Chatroom room;
     private String messageContent;
-    private Date timestamp;
 
-    public ChatMsg(int messageId, User sender, User receiver, String messageContent) {
-        this.messageId = messageId;
+    public ChatMsg(User sender, Chatroom room, String messageContent) {
         this.sender = sender;
-        this.receiver = receiver;
+        this.room = room;
         this.messageContent = messageContent;
-        this.timestamp = new Date(); // Set current timestamp
-    }
-
-    public int getMessageId() {
-        return messageId;
     }
 
     public User getSender() {
         return sender;
     }
 
-    public User getReceiver() {
-        return receiver;
+    public Chatroom getRoom() {
+        return room;
     }
 
     public String getMessageContent() {
         return messageContent;
     }
-
-    public Date getcurrentDate() {
-        return timestamp;
-    }
-
    
 }
