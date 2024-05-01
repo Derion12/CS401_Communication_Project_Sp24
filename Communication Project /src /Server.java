@@ -93,6 +93,7 @@ public class Server {
 		        
 		        //retrieving logs
 		        LogList logs = new LogList();
+		        LogList newLogs = new LogList();
 		        fetchLogs(logs);
 		        ArrayList<LogEntry> adminRoomLogs = new ArrayList<LogEntry>(logs.getAllLogs());
 		        ArrayList<LogEntry> roomOneLogs = new ArrayList<LogEntry>(logs.getRoomLogs(1));
@@ -183,6 +184,12 @@ public class Server {
 		        			System.out.println("Not logged in, doing nothing.");
 		        		}
 			        	switch(messageGet.getType()) {
+			        	case FETCHLOGS:{
+			        		int roomID = 0;
+			        		
+			        		newLogs.getRoomLogs(roomID);
+			        		break;
+			        	}
 			        	case DIRECTMESSAGE:{
 			        		Date newDate = new Date();			//create log
 			        		String data = messageGet.getText();
@@ -193,7 +200,7 @@ public class Server {
 			    			String user = parsed[1];
 			    			
 			    			LogEntry newLog = new LogEntry(newDate, text, Integer.valueOf(room), user);		    			
-			    			
+			    			newLogs.addLog(newDate, text, Integer.valueOf(room), user);
 			    			String sourceName = "logs.txt";
 			    			File file = new File(System.getProperty("user.dir") + "\\" + sourceName);
 			    			
@@ -287,3 +294,5 @@ public class Server {
     }
 
 }
+
+
