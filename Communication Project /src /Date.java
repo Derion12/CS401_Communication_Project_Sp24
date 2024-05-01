@@ -1,7 +1,9 @@
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Date {
+
+public class Date implements Serializable {
     private LocalDateTime currentDate;
     private String formattedDate;
 
@@ -10,6 +12,9 @@ public class Date {
         currentDate = LocalDateTime.now();
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
         formattedDate = currentDate.format(myFormatObj);
+    }
+    public Date(String logDate) {	//if the date already exists
+        formattedDate = logDate;
     }
 
     // Method to get the current date
