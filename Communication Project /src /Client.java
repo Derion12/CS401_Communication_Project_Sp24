@@ -99,12 +99,36 @@ public class Client {
                     JOptionPane.showMessageDialog(null, "You do not have access to this chatroom!");
                     break;
                 }
+
+                // Create a panel to hold the message display
+                JPanel panel = new JPanel();
+                panel.setLayout(new BorderLayout());
+
+                // Create a text area to display all messages
+                JTextArea messageArea = new JTextArea();
+                messageArea.setEditable(false);
+
+                // Retrieve and append all messages from the chatroom
                 ArrayList<String> logPrint = new ArrayList<>(rooms.get(0).printLogs());
                 for (String log : logPrint) {
-                    System.out.println(log);
+                    messageArea.append(log + "\n");
                 }
+
+                // Add the text area to a scroll pane and then to the panel
+                JScrollPane scrollPane = new JScrollPane(messageArea);
+                panel.add(scrollPane, BorderLayout.CENTER);
+
+                // Show the panel in a frame
+                JFrame frame = new JFrame("All Messages");
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.getContentPane().add(panel);
+                frame.pack();
+                frame.setVisible(true);
+               
                 break;
             }
+
+
             case 1: {
                 if (Integer.valueOf(perms[1]) == 0) {
                     JOptionPane.showMessageDialog(null, "You do not have access to this chatroom!");
@@ -158,42 +182,93 @@ public class Client {
                     JOptionPane.showMessageDialog(null, "You do not have access to this chatroom!");
                     break;
                 }
+
+                // Display messages in the room
                 ArrayList<String> logPrint = new ArrayList<>(rooms.get(2).printLogs());
+                StringBuilder logMessages = new StringBuilder();
                 for (String log : logPrint) {
-                    System.out.println(log);
-                    
+                    logMessages.append(log).append("\n");
                 }
-                String newMsg = JOptionPane.showInputDialog("Send a message:");
-                String toParse = rooms.get(2).getID() + "-" + userID + "-" + newMsg;
-                Date date = new Date();
-                String finalText = rooms.get(2).getID() + "-" + date.getCurrentDate() + "-" + userID + "-" + newMsg;;
-                System.out.println(finalText);
-                messageSend = new Message(MsgType.DIRECTMESSAGE, MsgStatus.UNDEFINED, toParse, null);
-                objectOutputStream.writeObject(messageSend);
-                messageGet = (Message) objectInputStream.readObject();
-                JOptionPane.showMessageDialog(null, "Message sent!", "Epic", JOptionPane.INFORMATION_MESSAGE);
+                
+                // Create a panel to hold the message display and input components
+                JPanel panel = new JPanel();
+                panel.setLayout(new BorderLayout());
+
+                // Add message display to the panel
+                JTextArea messageArea = new JTextArea(10, 30);
+                messageArea.setText(logMessages.toString());
+                messageArea.setEditable(false);
+                panel.add(new JScrollPane(messageArea), BorderLayout.CENTER);
+
+                // Add input field for sending a message
+                JTextField messageField = new JTextField(30);
+                panel.add(messageField, BorderLayout.SOUTH);
+
+                // Show custom dialog
+                int option = JOptionPane.showConfirmDialog(null, panel, "Chat Room", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+                if (option == JOptionPane.OK_OPTION) {
+                    String newMsg = messageField.getText();
+                    String toParse = rooms.get(2).getID() + "-" + userID + "-" + newMsg;
+                    Date date = new Date();
+                    String finalText = rooms.get(2).getID() + "-" + date.getCurrentDate() + "-" + userID + "-" + newMsg;
+                    System.out.println(finalText);
+
+                    // Send the message
+                    messageSend = new Message(MsgType.DIRECTMESSAGE, MsgStatus.UNDEFINED, toParse, null);
+                    objectOutputStream.writeObject(messageSend);
+                    messageGet = (Message) objectInputStream.readObject();
+                    JOptionPane.showMessageDialog(null, "Message sent!", "Epic", JOptionPane.INFORMATION_MESSAGE);
+                }
                 break;
             }
+
+
             case 3: {
                 if (Integer.valueOf(perms[3]) == 0) {
                     JOptionPane.showMessageDialog(null, "You do not have access to this chatroom!");
                     break;
                 }
+
+                // Display messages in the room
                 ArrayList<String> logPrint = new ArrayList<>(rooms.get(3).printLogs());
+                StringBuilder logMessages = new StringBuilder();
                 for (String log : logPrint) {
-                    System.out.println(log);
+                    logMessages.append(log).append("\n");
                 }
-                String newMsg = JOptionPane.showInputDialog("Send a message:");
-                String toParse = rooms.get(3).getID() + "-" + userID + "-" + newMsg;
-                Date date = new Date();
-                String finalText = rooms.get(3).getID() + "-" + date.getCurrentDate() + "-" + userID + "-" + newMsg;;
-                System.out.println(finalText);
-                messageSend = new Message(MsgType.DIRECTMESSAGE, MsgStatus.UNDEFINED, toParse, null);
-                objectOutputStream.writeObject(messageSend);
-                messageGet = (Message) objectInputStream.readObject();
-                JOptionPane.showMessageDialog(null, "Message sent!", "Epic", JOptionPane.INFORMATION_MESSAGE);
+
+                // Create a panel to hold the message display and input components
+                JPanel panel = new JPanel();
+                panel.setLayout(new BorderLayout());
+
+                // Add message display to the panel
+                JTextArea messageArea = new JTextArea(10, 30);
+                messageArea.setText(logMessages.toString());
+                messageArea.setEditable(false);
+                panel.add(new JScrollPane(messageArea), BorderLayout.CENTER);
+
+                // Add input field for sending a message
+                JTextField messageField = new JTextField(30);
+                panel.add(messageField, BorderLayout.SOUTH);
+
+                // Show custom dialog
+                int option = JOptionPane.showConfirmDialog(null, panel, "Chat Room", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+                if (option == JOptionPane.OK_OPTION) {
+                    String newMsg = messageField.getText();
+                    String toParse = rooms.get(3).getID() + "-" + userID + "-" + newMsg;
+                    Date date = new Date();
+                    String finalText = rooms.get(3).getID() + "-" + date.getCurrentDate() + "-" + userID + "-" + newMsg;
+                    System.out.println(finalText);
+
+                    // Send the message
+                    messageSend = new Message(MsgType.DIRECTMESSAGE, MsgStatus.UNDEFINED, toParse, null);
+                    objectOutputStream.writeObject(messageSend);
+                    messageGet = (Message) objectInputStream.readObject();
+                    JOptionPane.showMessageDialog(null, "Message sent!", "Epic", JOptionPane.INFORMATION_MESSAGE);
+                }
                 break;
             }
+
+
             case 4: {
                 messageSend = new Message(MsgType.LOGOUT, MsgStatus.UNDEFINED, "", null);
                 objectOutputStream.writeObject(messageSend);
