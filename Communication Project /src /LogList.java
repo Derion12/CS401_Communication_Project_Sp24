@@ -9,8 +9,8 @@ public class LogList {
     }
 
     // Method to add a log entry to the list
-    public void addLog(Date timestamp, ChatMsg text, Chatroom room) {
-        LogEntry logEntry = new LogEntry(timestamp, text, room);
+    public void addLog(Date timestamp, String text, int roomID, String userID) {
+        LogEntry logEntry = new LogEntry(timestamp, text, roomID, userID);
         logs.add(logEntry);
     }
 
@@ -23,7 +23,7 @@ public class LogList {
     	ArrayList<LogEntry> roomLogs = new ArrayList<LogEntry>();
     	
     	for(int i=0; i<logs.size(); i++) {
-    		if(logs.get(i).getRoom().getID() == roomID) {
+    		if(logs.get(i).getRoomID() == roomID) {
     			roomLogs.add(logs.get(i));
     		}
     	}
@@ -31,9 +31,9 @@ public class LogList {
     	return roomLogs;
     }
     
-//    // Method to clear all log entries
-//    public void clearLogs() {
-//        logs.clear();
-//    }
+    // Method to clear all log entries
+    public void clearLogs() {
+        logs.clear();
+    }
 
 }
