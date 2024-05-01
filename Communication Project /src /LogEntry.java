@@ -1,13 +1,17 @@
-	// Define a LogEntry class to represent individual log entries
-	class LogEntry {
-	    private ChatMsg text;
+
+import java.io.Serializable;
+// Define a LogEntry class to represent individual log entries
+	class LogEntry  implements Serializable{
+	    private String text;
 	    private Date timestamp;
-	    private Chatroom room;
+	    private int roomID;
+	    private String userID;
 	    // Constructor
-	    public LogEntry(Date timestamp, ChatMsg text, Chatroom room) {
+	    public LogEntry(Date timestamp, String text, int roomID, String userID) {
 	        this.timestamp = timestamp;
 	        this.text = text;
-	        this.room = room;
+	        this.roomID = roomID;
+	        this.userID = userID;
 	    }
 	
 	    // Getters
@@ -15,17 +19,21 @@
 	        return timestamp;
 	    }
 	
-	    public ChatMsg getText() {
+	    public String getText() {
 	        return text;
 	    }
 	    
-	    public Chatroom getRoom() {
-	        return room;
+	    public int getRoomID() {
+	        return roomID;
+	    }
+	    public String getUserID() {
+	        return userID;
 	    }
 	
+	    
 	    // toString method to represent LogEntry as a string
-	    @Override
+
 	    public String toString() {
-	        return timestamp + " - " + text.getSender() + ": " + text.getMessageContent();
+	        return Integer.toString(roomID) + "-" + timestamp.getCurrentDate() + "-" + userID + "-" + text;
 	    }
 	}
