@@ -108,11 +108,16 @@ public class Client {
                 messageArea.setEditable(false);
 
                 // Retrieve and append all messages from the chatroom
+                messageSend = new Message(MsgType.FETCHLOGS, MsgStatus.UNDEFINED, "0", null);
+                objectOutputStream.writeObject(messageSend);
+                messageGet = (Message) objectInputStream.readObject();
+                String newLogs = messageGet.getText();
                 ArrayList<String> logPrint = new ArrayList<>(rooms.get(0).printLogs());
                 for (String log : logPrint) {
                     messageArea.append(log + "\n");
                 }
-
+                messageArea.append(newLogs);
+                
                 // Add the text area to a scroll pane and then to the panel
                 JScrollPane scrollPane = new JScrollPane(messageArea);
                 panel.add(scrollPane, BorderLayout.CENTER);
@@ -137,11 +142,16 @@ public class Client {
                 }
 
                 // Display messages in the room
+                messageSend = new Message(MsgType.FETCHLOGS, MsgStatus.UNDEFINED, "1", null);
+                objectOutputStream.writeObject(messageSend);
+                messageGet = (Message) objectInputStream.readObject();
+                String newLogs = messageGet.getText();
                 ArrayList<String> logPrint = new ArrayList<>(rooms.get(1).printLogs());
                 StringBuilder logMessages = new StringBuilder();
                 for (String log : logPrint) {
                     logMessages.append(log).append("\n");
                 }
+                logMessages.append(newLogs);
                 
                 // Create a panel to hold the message display and input components
                 JPanel panel = new JPanel();
@@ -165,6 +175,10 @@ public class Client {
                 int option = JOptionPane.showConfirmDialog(null, panel, "Chat Room", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
                 if (option == JOptionPane.OK_OPTION) {
                     String newMsg = messageField.getText();
+                    if (newMsg.equals("")) {
+                    	JOptionPane.showMessageDialog(null, "Nothing to send! Returning to menu.", "Alright", JOptionPane.INFORMATION_MESSAGE);
+                    	break;
+                    }
                     String toParse = rooms.get(1).getID() + "-" + userID + "-" + newMsg;
                     Date date = new Date();
                     String finalText = rooms.get(1).getID() + "-" + date.getCurrentDate() + "-" + userID + "-" + newMsg;
@@ -185,11 +199,18 @@ public class Client {
                 }
 
                 // Display messages in the room
+                messageSend = new Message(MsgType.FETCHLOGS, MsgStatus.UNDEFINED, "2", null);
+                objectOutputStream.writeObject(messageSend);
+                messageGet = (Message) objectInputStream.readObject();
+                String newLogs = messageGet.getText();
+                
                 ArrayList<String> logPrint = new ArrayList<>(rooms.get(2).printLogs());
                 StringBuilder logMessages = new StringBuilder();
                 for (String log : logPrint) {
                     logMessages.append(log).append("\n");
                 }
+                
+                logMessages.append(newLogs);
                 
                 // Create a panel to hold the message display and input components
                 JPanel panel = new JPanel();
@@ -209,6 +230,11 @@ public class Client {
                 int option = JOptionPane.showConfirmDialog(null, panel, "Chat Room", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
                 if (option == JOptionPane.OK_OPTION) {
                     String newMsg = messageField.getText();
+                    if (newMsg.equals("")) {
+                    	JOptionPane.showMessageDialog(null, "Nothing to send! Returning to menu.", "Alright", JOptionPane.INFORMATION_MESSAGE);
+                    	break;
+                    }
+                    
                     String toParse = rooms.get(2).getID() + "-" + userID + "-" + newMsg;
                     Date date = new Date();
                     String finalText = rooms.get(2).getID() + "-" + date.getCurrentDate() + "-" + userID + "-" + newMsg;
@@ -231,11 +257,18 @@ public class Client {
                 }
 
                 // Display messages in the room
+                messageSend = new Message(MsgType.FETCHLOGS, MsgStatus.UNDEFINED, "3", null);
+                objectOutputStream.writeObject(messageSend);
+                messageGet = (Message) objectInputStream.readObject();
+                String newLogs = messageGet.getText();
+                
                 ArrayList<String> logPrint = new ArrayList<>(rooms.get(3).printLogs());
                 StringBuilder logMessages = new StringBuilder();
                 for (String log : logPrint) {
                     logMessages.append(log).append("\n");
                 }
+                
+                logMessages.append(newLogs);
 
                 // Create a panel to hold the message display and input components
                 JPanel panel = new JPanel();
@@ -255,6 +288,11 @@ public class Client {
                 int option = JOptionPane.showConfirmDialog(null, panel, "Chat Room", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
                 if (option == JOptionPane.OK_OPTION) {
                     String newMsg = messageField.getText();
+                    if (newMsg.equals("")) {
+                    	JOptionPane.showMessageDialog(null, "Nothing to send! Returning to menu.", "Alright", JOptionPane.INFORMATION_MESSAGE);
+                    	break;
+                    }
+                    
                     String toParse = rooms.get(3).getID() + "-" + userID + "-" + newMsg;
                     Date date = new Date();
                     String finalText = rooms.get(3).getID() + "-" + date.getCurrentDate() + "-" + userID + "-" + newMsg;
