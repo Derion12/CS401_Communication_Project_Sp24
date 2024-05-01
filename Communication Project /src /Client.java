@@ -5,7 +5,6 @@ import java.awt.GridLayout;
 import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -100,7 +99,7 @@ public class Client {
                     break;
                 }
 
-                // Create a panel to hold the message display
+                // Create a panel to hold the message display and input components
                 JPanel panel = new JPanel();
                 panel.setLayout(new BorderLayout());
 
@@ -118,15 +117,17 @@ public class Client {
                 JScrollPane scrollPane = new JScrollPane(messageArea);
                 panel.add(scrollPane, BorderLayout.CENTER);
 
-                // Show the panel in a frame
-                JFrame frame = new JFrame("All Messages");
-                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                frame.getContentPane().add(panel);
-                frame.pack();
-                frame.setVisible(true);
-               
+                // Show the custom dialog
+                int option = JOptionPane.showConfirmDialog(null, panel, "All Messages", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+                if (option == JOptionPane.OK_OPTION) {
+                    // If you want to handle any action after OK is pressed, you can add it here
+                    // For example, sending a message or performing any other action
+                }
                 break;
             }
+
+               
+
 
 
             case 1: {
